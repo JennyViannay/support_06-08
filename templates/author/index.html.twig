@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AuthorController!{% endblock %}
+
+{% block body %}
+<div>
+    {% for author in authors %}
+    <p>
+        {{author.name}} <br>
+        <a href="{{path('author_delete', {'id' : author.id })}}">Supprimer</a>
+        <a href="{{path('author_edit', {'id' : author.id })}}">Modifier</a>
+        <a href="{{path('author_show', {'id' : author.id })}}">Voir</a>
+    </p>
+    {% endfor %}
+    <a href="{{path('author_create')}}">Ajouter</a>
+</div>
+{% endblock %}

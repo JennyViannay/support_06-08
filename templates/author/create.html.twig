@@ -1,0 +1,13 @@
+
+{% block body %}
+
+{% if error is not empty %}
+    <p>{{error}}</p>
+{% endif %}
+
+<form method="POST">
+    <input type="text" name="name" placeholder="Nom de l'auteur" value={{ author is defined ? author.name : '' }}>
+    <button type="submit">Enregistrer</button>
+</form>
+
+{% endblock %}
